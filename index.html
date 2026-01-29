@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <title>sim-manager API Docs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* 상단 네비게이션 바 스타일 */
+      body { margin: 0; padding: 0; }
+      .header {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #1a1a1a;
+        color: white;
+        border-bottom: 1px solid #333;
+        font-family: sans-serif;
+      }
+      .header label { margin-right: 10px; font-weight: bold; }
+      select {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #555;
+        background-color: #333;
+        color: white;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="header">
+      <label for="api-selector">Select Service:</label>
+      <select id="api-selector" onchange="loadApi(this.value)">
+        <option value="./proto/OpenAPI-v3-docs/tm/task_manager.openapi.yaml">Task Manager</option>
+        <option value="./proto/OpenAPI-v3-docs/mars/common.openapi.yaml">MARS Common Messages</option>
+        <option value="./proto/OpenAPI-v3-docs/mars/mod02_service.openapi.yaml">MARS MOD02 Service</option>
+        <option value="./proto/OpenAPI-v3-docs/mars/mod06_service.openapi.yaml">MARS MOD06 Service</option>
+        <option value="./proto/OpenAPI-v3-docs/mars/mod13_service.openapi.yaml">MARS MOD13 Service</option>
+        <option value="./proto/OpenAPI-v3-docs/mars/task_control.openapi.yaml">MARS Task Control</option>
+      </select>
+    </div>
+
+    <script
+      id="api-reference"
+      data-url="./proto/OpenAPI-v3-docs/tm/task_manager.openapi.yaml">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+
+    <script>
+      function loadApi(url) {
+        const scalarScript = document.getElementById('api-reference');
+        // Scalar는 data-url 속성을 감지하거나, 이벤트를 통해 설정을 업데이트할 수 있습니다.
+        // 가장 확실한 방법은 Scalar의 설정 이벤트를 발생시키는 것입니다.
+        
+        // Scalar의 렌더링 방식에 따라 페이지 리로드가 필요 없는 방식을 쓸 수도 있지만,
+        // 가장 간단하게는 아래와 같이 속성을 바꾸고 뷰어를 갱신하게 할 수 있습니다.
+        
+        // *참고: Scalar 최신 버전은 data-url 변경을 즉시 감지하지 않을 수도 있으므로,
+        // configuration object를 사용하는 방식이 더 안정적일 수 있습니다.
+        // 아래는 간단한 트릭(속성 변경)입니다. 동작하지 않으면 페이지를 해당 쿼리 파라미터로 리로드하는 방식이 제일 깔끔합니다.
+        
+        // [추천 방식] 쿼리 파라미터를 이용한 SPA 방식
+        const currentUrl = new URL(window.location);
+        currentUrl.searchParams.set('spec', url);
+        window.history.pushState({}, '', currentUrl);
+        
+        // Scalar 엘리먼트에 새로운 설정을 주입 (Scalar API에 따라 다를 수 있음)
+        // 만약 동적 변경이 어렵다면 단순히 location.reload()를 해도 됩니다.
+        document.querySelector('body').innerHTML = ''; // 초기화
+        
+        // 새 스크립트 태그 생성 및 실행 (Re-mount)
+        // 실제로는 아래 "Advanced Tip"의 통합 방식이 더 좋습니다.
+        window.location.reload(); 
+      }
+      
+      // 페이지 로드 시 쿼리 파라미터 확인
+      window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const specUrl = params.get('spec');
+        if (specUrl) {
+          document.getElementById('api-selector').value = specUrl;
+          document.getElementById('api-reference').setAttribute('data-url', specUrl);
+        }
+      }
+    </script>
+  </body>
+</html>

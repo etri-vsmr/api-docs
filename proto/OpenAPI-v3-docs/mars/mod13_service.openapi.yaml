@@ -1,0 +1,1073 @@
+openapi: 3.1.0
+info:
+  title: mars_service
+paths:
+  /mars_service.MARSMod13Service/GetAllEntries:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetAllEntries
+      operationId: mars_service.MARSMod13Service.GetAllEntries
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetAllEntriesRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.MEEntryList'
+  /mars_service.MARSMod13Service/GetEntries:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetEntries
+      operationId: mars_service.MARSMod13Service.GetEntries
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetEntriesRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.MEEntryList'
+  /mars_service.MARSMod13Service/GetEntry:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetEntry
+      operationId: mars_service.MARSMod13Service.GetEntry
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetEntryRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.MEEntry'
+  /mars_service.MARSMod13Service/GetEntryCount:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetEntryCount
+      description: High-level MIET operations
+      operationId: mars_service.MARSMod13Service.GetEntryCount
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.Empty'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod13Service/GetMiDaColor:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaColor
+      operationId: mars_service.MARSMod13Service.GetMiDaColor
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod13Service/GetMiDaMietab:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaMietab
+      operationId: mars_service.MARSMod13Service.GetMiDaMietab
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod13Service/GetMiDaMietaf:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaMietaf
+      description: Double accessors
+      operationId: mars_service.MARSMod13Service.GetMiDaMietaf
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod13Service/GetMiDaMietdesc:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaMietdesc
+      operationId: mars_service.MARSMod13Service.GetMiDaMietdesc
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetTwoIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod13Service/GetMiDaMietmax:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaMietmax
+      operationId: mars_service.MARSMod13Service.GetMiDaMietmax
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod13Service/GetMiDaMietmin:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaMietmin
+      operationId: mars_service.MARSMod13Service.GetMiDaMietmin
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod13Service/GetMiDaValue:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaValue
+      operationId: mars_service.MARSMod13Service.GetMiDaValue
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod13Service/GetMiDaWin:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiDaWin
+      operationId: mars_service.MARSMod13Service.GetMiDaWin
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod13Service/GetMiHdNmiet:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: GetMiHdNmiet
+      description: |-
+        Low-level individual field accessors (legacy compatibility)
+         nmiet: first dimension fixed to 2
+      operationId: mars_service.MARSMod13Service.GetMiHdNmiet
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.Empty'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod13Service/SetEntry:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetEntry
+      operationId: mars_service.MARSMod13Service.SetEntry
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.MEEntry'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaColor:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaColor
+      operationId: mars_service.MARSMod13Service.SetMiDaColor
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaMietab:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaMietab
+      operationId: mars_service.MARSMod13Service.SetMiDaMietab
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaMietaf:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaMietaf
+      operationId: mars_service.MARSMod13Service.SetMiDaMietaf
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaMietdesc:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaMietdesc
+      operationId: mars_service.MARSMod13Service.SetMiDaMietdesc
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleTwoIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaMietmax:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaMietmax
+      operationId: mars_service.MARSMod13Service.SetMiDaMietmax
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaMietmin:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaMietmin
+      operationId: mars_service.MARSMod13Service.SetMiDaMietmin
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaValue:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaValue
+      operationId: mars_service.MARSMod13Service.SetMiDaValue
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiDaWin:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiDaWin
+      operationId: mars_service.MARSMod13Service.SetMiDaWin
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod13Service/SetMiHdNmiet:
+    post:
+      tags:
+        - mars_service.MARSMod13Service
+      summary: SetMiHdNmiet
+      operationId: mars_service.MARSMod13Service.SetMiHdNmiet
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetIntRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+components:
+  schemas:
+    connect-protocol-version:
+      type: number
+      title: Connect-Protocol-Version
+      enum:
+        - 1
+      description: Define the version of the Connect protocol
+      const: 1
+    connect-timeout-header:
+      type: number
+      title: Connect-Timeout-Ms
+      description: Define the timeout, in ms
+    connect.error:
+      type: object
+      properties:
+        code:
+          type: string
+          examples:
+            - not_found
+          enum:
+            - canceled
+            - unknown
+            - invalid_argument
+            - deadline_exceeded
+            - not_found
+            - already_exists
+            - permission_denied
+            - resource_exhausted
+            - failed_precondition
+            - aborted
+            - out_of_range
+            - unimplemented
+            - internal
+            - unavailable
+            - data_loss
+            - unauthenticated
+          description: The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
+        message:
+          type: string
+          description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/connect.error_details.Any'
+          description: A list of messages that carry the error details. There is no limit on the number of messages.
+      title: Connect Error
+      additionalProperties: true
+      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+    connect.error_details.Any:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 'A URL that acts as a globally unique identifier for the type of the serialized message. For example: `type.googleapis.com/google.rpc.ErrorInfo`. This is used to determine the schema of the data in the `value` field and is the discriminator for the `debug` field.'
+        value:
+          type: string
+          format: binary
+          description: The Protobuf message, serialized as bytes and base64-encoded. The specific message type is identified by the `type` field.
+        debug:
+          oneOf:
+            - type: object
+              title: Any
+              additionalProperties: true
+              description: Detailed error information.
+          discriminator:
+            propertyName: type
+          title: Debug
+          description: Deserialized error detail payload. The 'type' field indicates the schema. This field is for easier debugging and should not be relied upon for application logic.
+      additionalProperties: true
+      description: Contains an arbitrary serialized message along with a @type that describes the type of the serialized message, with an additional debug field for ConnectRPC error details.
+    mars_service.DoubleValue:
+      type: object
+      properties:
+        value:
+          type: number
+          title: value
+          format: double
+      title: DoubleValue
+      additionalProperties: false
+    mars_service.Empty:
+      type: object
+      title: Empty
+      additionalProperties: false
+    mars_service.GetAllEntriesRequest:
+      type: object
+      title: GetAllEntriesRequest
+      additionalProperties: false
+    mars_service.GetEntriesRequest:
+      type: object
+      properties:
+        entryIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          title: entry_ids
+          description: Specific entry IDs to retrieve
+      title: GetEntriesRequest
+      additionalProperties: false
+    mars_service.GetEntryRequest:
+      type: object
+      properties:
+        entryId:
+          type: integer
+          title: entry_id
+          format: int32
+      title: GetEntryRequest
+      additionalProperties: false
+    mars_service.GetIntIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+      title: GetIntIndexRequest
+      additionalProperties: false
+      description: Request messages with indices
+    mars_service.GetTwoIntIndexRequest:
+      type: object
+      properties:
+        index1:
+          type: integer
+          title: index1
+          format: int32
+        index2:
+          type: integer
+          title: index2
+          format: int32
+      title: GetTwoIntIndexRequest
+      additionalProperties: false
+    mars_service.IntValue:
+      type: object
+      properties:
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: IntValue
+      additionalProperties: false
+    mars_service.MEEntry:
+      type: object
+      properties:
+        id:
+          type: integer
+          title: id
+          format: int32
+          description: Entry ID
+        mietab:
+          type: integer
+          title: mietab
+          format: int32
+          description: mi_da_mietab(2, id)
+        win:
+          type: integer
+          title: win
+          format: int32
+          description: mi_da_win(2, id)
+        color:
+          type: integer
+          title: color
+          format: int32
+          description: mi_da_color(2, id)
+        mietaf:
+          type: number
+          title: mietaf
+          format: double
+          description: mi_da_mietaf(id)
+        mietmin:
+          type: number
+          title: mietmin
+          format: double
+          description: mi_da_mietmin(id)
+        mietmax:
+          type: number
+          title: mietmax
+          format: double
+          description: mi_da_mietmax(id)
+        mietdesc:
+          type: number
+          title: mietdesc
+          format: double
+          description: mi_da_mietdesc(2, id)
+        value:
+          type: number
+          title: value
+          format: double
+          description: mi_da_value(id)
+      title: MEEntry
+      additionalProperties: false
+      description: MEEntry - Minor Edit Entry configuration data (flat structure)
+    mars_service.MEEntryList:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/mars_service.MEEntry'
+          title: entries
+      title: MEEntryList
+      additionalProperties: false
+    mars_service.SetDoubleIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: number
+          title: value
+          format: double
+      title: SetDoubleIndexRequest
+      additionalProperties: false
+    mars_service.SetDoubleTwoIndexRequest:
+      type: object
+      properties:
+        index1:
+          type: integer
+          title: index1
+          format: int32
+        index2:
+          type: integer
+          title: index2
+          format: int32
+        value:
+          type: number
+          title: value
+          format: double
+      title: SetDoubleTwoIndexRequest
+      additionalProperties: false
+    mars_service.SetIntIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetIntIndexRequest
+      additionalProperties: false
+    mars_service.SetIntRequest:
+      type: object
+      properties:
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetIntRequest
+      additionalProperties: false
+      description: Set value requests
+security: []
+tags:
+  - name: mars_service.MARSMod13Service
+    description: MARS Module 13 Service - MIET (Minor Edit) Configuration and Data

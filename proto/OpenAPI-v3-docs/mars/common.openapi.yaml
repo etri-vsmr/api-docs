@@ -1,0 +1,167 @@
+openapi: 3.1.0
+info:
+  title: mars_service
+paths: {}
+components:
+  schemas:
+    mars_service.BoolValue:
+      type: object
+      properties:
+        value:
+          type: boolean
+          title: value
+      title: BoolValue
+      additionalProperties: false
+    mars_service.DoubleValue:
+      type: object
+      properties:
+        value:
+          type: number
+          title: value
+          format: double
+      title: DoubleValue
+      additionalProperties: false
+    mars_service.Empty:
+      type: object
+      title: Empty
+      additionalProperties: false
+    mars_service.GetIntIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+      title: GetIntIndexRequest
+      additionalProperties: false
+      description: Request messages with indices
+    mars_service.GetTwoIntIndexRequest:
+      type: object
+      properties:
+        index1:
+          type: integer
+          title: index1
+          format: int32
+        index2:
+          type: integer
+          title: index2
+          format: int32
+      title: GetTwoIntIndexRequest
+      additionalProperties: false
+    mars_service.IntValue:
+      type: object
+      properties:
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: IntValue
+      additionalProperties: false
+    mars_service.SetBoolRequest:
+      type: object
+      properties:
+        value:
+          type: boolean
+          title: value
+      title: SetBoolRequest
+      additionalProperties: false
+    mars_service.SetDoubleIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: number
+          title: value
+          format: double
+      title: SetDoubleIndexRequest
+      additionalProperties: false
+    mars_service.SetDoubleRequest:
+      type: object
+      properties:
+        value:
+          type: number
+          title: value
+          format: double
+      title: SetDoubleRequest
+      additionalProperties: false
+    mars_service.SetDoubleTwoIndexRequest:
+      type: object
+      properties:
+        index1:
+          type: integer
+          title: index1
+          format: int32
+        index2:
+          type: integer
+          title: index2
+          format: int32
+        value:
+          type: number
+          title: value
+          format: double
+      title: SetDoubleTwoIndexRequest
+      additionalProperties: false
+    mars_service.SetIntIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetIntIndexRequest
+      additionalProperties: false
+    mars_service.SetIntRequest:
+      type: object
+      properties:
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetIntRequest
+      additionalProperties: false
+      description: Set value requests
+    mars_service.SetStringIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: string
+          title: value
+      title: SetStringIndexRequest
+      additionalProperties: false
+    mars_service.SetTwoIntIndexRequest:
+      type: object
+      properties:
+        index1:
+          type: integer
+          title: index1
+          format: int32
+        index2:
+          type: integer
+          title: index2
+          format: int32
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetTwoIntIndexRequest
+      additionalProperties: false
+    mars_service.StringValue:
+      type: object
+      properties:
+        value:
+          type: string
+          title: value
+      title: StringValue
+      additionalProperties: false
+security: []

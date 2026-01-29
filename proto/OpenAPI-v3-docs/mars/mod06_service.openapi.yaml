@@ -1,0 +1,1188 @@
+openapi: 3.1.0
+info:
+  title: mars_service
+paths:
+  /mars_service.MARSMod06Service/GetAllComponents:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetAllComponents
+      operationId: mars_service.MARSMod06Service.GetAllComponents
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetAllComponentsRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.ICVComponentList'
+  /mars_service.MARSMod06Service/GetComponent:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetComponent
+      operationId: mars_service.MARSMod06Service.GetComponent
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetComponentRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.ICVComponent'
+  /mars_service.MARSMod06Service/GetComponentCount:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetComponentCount
+      description: High-level Component operations
+      operationId: mars_service.MARSMod06Service.GetComponentCount
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.Empty'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod06Service/GetComponentMode:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetComponentMode
+      description: Component mode control
+      operationId: mars_service.MARSMod06Service.GetComponentMode
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetComponentModeRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod06Service/GetComponents:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetComponents
+      operationId: mars_service.MARSMod06Service.GetComponents
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetComponentsRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.ICVComponentList'
+  /mars_service.MARSMod06Service/GetIcvDaAsis:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvDaAsis
+      operationId: mars_service.MARSMod06Service.GetIcvDaAsis
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod06Service/GetIcvDaCccno:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvDaCccno
+      operationId: mars_service.MARSMod06Service.GetIcvDaCccno
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetTwoIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod06Service/GetIcvDaCmode:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvDaCmode
+      operationId: mars_service.MARSMod06Service.GetIcvDaCmode
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetTwoIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod06Service/GetIcvDaCtype:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvDaCtype
+      operationId: mars_service.MARSMod06Service.GetIcvDaCtype
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetTwoIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod06Service/GetIcvDaRateV:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvDaRateV
+      operationId: mars_service.MARSMod06Service.GetIcvDaRateV
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod06Service/GetIcvDaTargetV:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvDaTargetV
+      operationId: mars_service.MARSMod06Service.GetIcvDaTargetV
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.DoubleValue'
+  /mars_service.MARSMod06Service/GetIcvDaWhatis:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvDaWhatis
+      operationId: mars_service.MARSMod06Service.GetIcvDaWhatis
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.StringValue'
+  /mars_service.MARSMod06Service/GetIcvHdNoicv:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvHdNoicv
+      description: |-
+        Low-level individual field accessors (legacy compatibility)
+         noicv: first dimension fixed to 2
+      operationId: mars_service.MARSMod06Service.GetIcvHdNoicv
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.Empty'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod06Service/GetIcvHdNotvf:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: GetIcvHdNotvf
+      description: 'notvf: j index only (i dimension always 2)'
+      operationId: mars_service.MARSMod06Service.GetIcvHdNotvf
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.GetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.IntValue'
+  /mars_service.MARSMod06Service/SetComponent:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetComponent
+      operationId: mars_service.MARSMod06Service.SetComponent
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.ICVComponent'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetComponentMode:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetComponentMode
+      operationId: mars_service.MARSMod06Service.SetComponentMode
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetComponentModeRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvDaAsis:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvDaAsis
+      operationId: mars_service.MARSMod06Service.SetIcvDaAsis
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvDaCccno:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvDaCccno
+      operationId: mars_service.MARSMod06Service.SetIcvDaCccno
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetTwoIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvDaCmode:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvDaCmode
+      operationId: mars_service.MARSMod06Service.SetIcvDaCmode
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetTwoIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvDaCtype:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvDaCtype
+      operationId: mars_service.MARSMod06Service.SetIcvDaCtype
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetTwoIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvDaRateV:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvDaRateV
+      operationId: mars_service.MARSMod06Service.SetIcvDaRateV
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvDaTargetV:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvDaTargetV
+      operationId: mars_service.MARSMod06Service.SetIcvDaTargetV
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetDoubleIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvDaWhatis:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvDaWhatis
+      operationId: mars_service.MARSMod06Service.SetIcvDaWhatis
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetStringIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvHdNoicv:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvHdNoicv
+      operationId: mars_service.MARSMod06Service.SetIcvHdNoicv
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetIntRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+  /mars_service.MARSMod06Service/SetIcvHdNotvf:
+    post:
+      tags:
+        - mars_service.MARSMod06Service
+      summary: SetIcvHdNotvf
+      operationId: mars_service.MARSMod06Service.SetIcvHdNotvf
+      parameters:
+        - name: Connect-Protocol-Version
+          in: header
+          required: true
+          schema:
+            $ref: '#/components/schemas/connect-protocol-version'
+        - name: Connect-Timeout-Ms
+          in: header
+          schema:
+            $ref: '#/components/schemas/connect-timeout-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mars_service.SetIntIndexRequest'
+        required: true
+      responses:
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect.error'
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mars_service.Empty'
+components:
+  schemas:
+    connect-protocol-version:
+      type: number
+      title: Connect-Protocol-Version
+      enum:
+        - 1
+      description: Define the version of the Connect protocol
+      const: 1
+    connect-timeout-header:
+      type: number
+      title: Connect-Timeout-Ms
+      description: Define the timeout, in ms
+    connect.error:
+      type: object
+      properties:
+        code:
+          type: string
+          examples:
+            - not_found
+          enum:
+            - canceled
+            - unknown
+            - invalid_argument
+            - deadline_exceeded
+            - not_found
+            - already_exists
+            - permission_denied
+            - resource_exhausted
+            - failed_precondition
+            - aborted
+            - out_of_range
+            - unimplemented
+            - internal
+            - unavailable
+            - data_loss
+            - unauthenticated
+          description: The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
+        message:
+          type: string
+          description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/connect.error_details.Any'
+          description: A list of messages that carry the error details. There is no limit on the number of messages.
+      title: Connect Error
+      additionalProperties: true
+      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+    connect.error_details.Any:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 'A URL that acts as a globally unique identifier for the type of the serialized message. For example: `type.googleapis.com/google.rpc.ErrorInfo`. This is used to determine the schema of the data in the `value` field and is the discriminator for the `debug` field.'
+        value:
+          type: string
+          format: binary
+          description: The Protobuf message, serialized as bytes and base64-encoded. The specific message type is identified by the `type` field.
+        debug:
+          oneOf:
+            - type: object
+              title: Any
+              additionalProperties: true
+              description: Detailed error information.
+          discriminator:
+            propertyName: type
+          title: Debug
+          description: Deserialized error detail payload. The 'type' field indicates the schema. This field is for easier debugging and should not be relied upon for application logic.
+      additionalProperties: true
+      description: Contains an arbitrary serialized message along with a @type that describes the type of the serialized message, with an additional debug field for ConnectRPC error details.
+    mars_service.DoubleValue:
+      type: object
+      properties:
+        value:
+          type: number
+          title: value
+          format: double
+      title: DoubleValue
+      additionalProperties: false
+    mars_service.Empty:
+      type: object
+      title: Empty
+      additionalProperties: false
+    mars_service.GetAllComponentsRequest:
+      type: object
+      title: GetAllComponentsRequest
+      additionalProperties: false
+    mars_service.GetComponentModeRequest:
+      type: object
+      properties:
+        componentId:
+          type: integer
+          title: component_id
+          format: int32
+        subIndex:
+          type: integer
+          title: sub_index
+          format: int32
+      title: GetComponentModeRequest
+      additionalProperties: false
+    mars_service.GetComponentRequest:
+      type: object
+      properties:
+        componentId:
+          type: integer
+          title: component_id
+          format: int32
+      title: GetComponentRequest
+      additionalProperties: false
+    mars_service.GetComponentsRequest:
+      type: object
+      properties:
+        componentIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          title: component_ids
+          description: Specific component IDs to retrieve
+      title: GetComponentsRequest
+      additionalProperties: false
+    mars_service.GetIntIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+      title: GetIntIndexRequest
+      additionalProperties: false
+      description: Request messages with indices
+    mars_service.GetTwoIntIndexRequest:
+      type: object
+      properties:
+        index1:
+          type: integer
+          title: index1
+          format: int32
+        index2:
+          type: integer
+          title: index2
+          format: int32
+      title: GetTwoIntIndexRequest
+      additionalProperties: false
+    mars_service.ICVComponent:
+      type: object
+      properties:
+        id:
+          type: integer
+          title: id
+          format: int32
+          description: Component ID (1-199)
+        whatis:
+          type: string
+          title: whatis
+          description: component description (Fortran character*32 string)
+        ctype:
+          type: integer
+          title: ctype
+          format: int32
+          description: icv_da%ctype(2)
+        cccno:
+          type: integer
+          title: cccno
+          format: int32
+          description: icv_da%cccno(2)
+        cmode:
+          type: integer
+          title: cmode
+          format: int32
+          description: icv_da%cmode(2)
+        asis:
+          type: number
+          title: asis
+          format: double
+          description: current value
+        targetV:
+          type: number
+          title: target_v
+          format: double
+          description: target value
+        rateV:
+          type: number
+          title: rate_v
+          format: double
+          description: rate value
+      title: ICVComponent
+      additionalProperties: false
+      description: ICV Component representation (flat, matches icv_data sequence)
+    mars_service.ICVComponentList:
+      type: object
+      properties:
+        components:
+          type: array
+          items:
+            $ref: '#/components/schemas/mars_service.ICVComponent'
+          title: components
+      title: ICVComponentList
+      additionalProperties: false
+    mars_service.IntValue:
+      type: object
+      properties:
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: IntValue
+      additionalProperties: false
+    mars_service.SetComponentModeRequest:
+      type: object
+      properties:
+        componentId:
+          type: integer
+          title: component_id
+          format: int32
+        subIndex:
+          type: integer
+          title: sub_index
+          format: int32
+        mode:
+          type: integer
+          title: mode
+          format: int32
+      title: SetComponentModeRequest
+      additionalProperties: false
+    mars_service.SetDoubleIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: number
+          title: value
+          format: double
+      title: SetDoubleIndexRequest
+      additionalProperties: false
+    mars_service.SetIntIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetIntIndexRequest
+      additionalProperties: false
+    mars_service.SetIntRequest:
+      type: object
+      properties:
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetIntRequest
+      additionalProperties: false
+      description: Set value requests
+    mars_service.SetStringIndexRequest:
+      type: object
+      properties:
+        index:
+          type: integer
+          title: index
+          format: int32
+        value:
+          type: string
+          title: value
+      title: SetStringIndexRequest
+      additionalProperties: false
+    mars_service.SetTwoIntIndexRequest:
+      type: object
+      properties:
+        index1:
+          type: integer
+          title: index1
+          format: int32
+        index2:
+          type: integer
+          title: index2
+          format: int32
+        value:
+          type: integer
+          title: value
+          format: int32
+      title: SetTwoIntIndexRequest
+      additionalProperties: false
+    mars_service.StringValue:
+      type: object
+      properties:
+        value:
+          type: string
+          title: value
+      title: StringValue
+      additionalProperties: false
+security: []
+tags:
+  - name: mars_service.MARSMod06Service
+    description: MARS Module 06 Service - Component configuration and control
