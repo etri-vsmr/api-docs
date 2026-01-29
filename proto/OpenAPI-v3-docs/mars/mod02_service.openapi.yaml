@@ -530,12 +530,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/mars_service.DoubleValue'
-  /mars_service.MARSMod02Service/GetSucces:
+  /mars_service.MARSMod02Service/GetSuccess:
     post:
       tags:
         - mars_service.MARSMod02Service
-      summary: GetSucces
-      operationId: mars_service.MARSMod02Service.GetSucces
+      summary: GetSuccess
+      operationId: mars_service.MARSMod02Service.GetSuccess
       parameters:
         - name: Connect-Protocol-Version
           in: header
@@ -1230,12 +1230,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/mars_service.Empty'
-  /mars_service.MARSMod02Service/SetSucces:
+  /mars_service.MARSMod02Service/SetSuccess:
     post:
       tags:
         - mars_service.MARSMod02Service
-      summary: SetSucces
-      operationId: mars_service.MARSMod02Service.SetSucces
+      summary: SetSuccess
+      operationId: mars_service.MARSMod02Service.SetSuccess
       parameters:
         - name: Connect-Protocol-Version
           in: header

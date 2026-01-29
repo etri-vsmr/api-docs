@@ -45,6 +45,21 @@
       id="api-reference"
       data-url="./proto/OpenAPI-v3-docs/tm/task_manager.openapi.yaml">
     </script>
+    
+    <script>
+      // Scalar 라이브러리가 로드되기 전에 URL 파라미터 설정을 먼저 적용
+      (function() {
+         const params = new URLSearchParams(window.location.search);
+         const specUrl = params.get('spec');
+         if (specUrl) {
+           document.getElementById('api-reference').setAttribute('data-url', specUrl);
+           // 셀렉터 UI 동기화
+           const selector = document.getElementById('api-selector');
+           if (selector) selector.value = specUrl;
+         }
+      })();
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
 
     <script>
@@ -72,16 +87,6 @@
         // 새 스크립트 태그 생성 및 실행 (Re-mount)
         // 실제로는 아래 "Advanced Tip"의 통합 방식이 더 좋습니다.
         window.location.reload(); 
-      }
-      
-      // 페이지 로드 시 쿼리 파라미터 확인
-      window.onload = function() {
-        const params = new URLSearchParams(window.location.search);
-        const specUrl = params.get('spec');
-        if (specUrl) {
-          document.getElementById('api-selector').value = specUrl;
-          document.getElementById('api-reference').setAttribute('data-url', specUrl);
-        }
       }
     </script>
   </body>
